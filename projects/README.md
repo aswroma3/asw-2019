@@ -30,9 +30,19 @@ Queste informazioni sono descritte nell'ambito di ciascun progetto.
 ## Build  
 
 La costruzione (build, ovvero compilazione e assemblaggio) delle applicazioni 
-va fatta applicazione per applicazione, utilizzando **Gradle**. 
+va fatta applicazione per applicazione, utilizzando **Java SDK** e **Gradle**. 
 
-Per compilare un'applicazione bisogna: 
+Per compilare un'applicazione sul proprio PC bisogna: 
+
+1. aver preventivamente installato e configurato *Java SDK* e *Gradle* 
+
+2. usare una shell/terminale del proprio PC 
+
+3. posizionarsi nella cartella principale dell'applicazione di interesse 
+
+4. per compilare e assemblare l'applicazione, eseguire il comando `gradle build` 
+
+In alternativa, è possibile compilare un'applicazione in una macchina virtuale:   
 
 1. collegarsi con `vagrant ssh` alla macchina virtuale **dev** 
    dell'ambiente [developer](../environments/developer/), su cui sono installati *Java SDK* e *Gradle* 
@@ -40,18 +50,6 @@ Per compilare un'applicazione bisogna:
 2. posizionarsi nella cartella principale dell'applicazione di interesse 
 
 3. per compilare e assemblare l'applicazione, eseguire il comando `gradle build` 
-
-In alternativa, è possibile compilare un'applicazione sul proprio PC 
-
-1. installare e configurare *Java SDK* 
-
-2. installare e configurare *Gradle* 
-
-3. usare una shell del proprio PC 
-
-4. posizionarsi nella cartella principale dell'applicazione di interesse 
-
-5. per compilare e assemblare l'applicazione, eseguire il comando `gradle build` 
 
 E' anche possibile: 
 
@@ -70,6 +68,13 @@ nell'ambito di una opportuna macchina virtuale di un opportuno ambiente di esecu
 
 La modalità specifica di esecuzione delle applicazioni distribuite può variare da progetto a progetto, 
 e pertanto è descritta nell'ambito dei singoli progetti. 
+
+Nei casi più semplici, è possibile eseguire un'applicazione come segue:  
+
+2. posizionarsi nella cartella principale dell'applicazione di interesse 
+
+3. per eseguire l'applicazione, eseguire il comando `gradle run` 
+
 
 ## Progetti 
 
