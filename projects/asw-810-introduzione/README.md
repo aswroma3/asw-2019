@@ -54,6 +54,7 @@ descritta nella sezione [projects/](../).
 ### Componenti eseguibili 
 
 Questa applicazione è composta da due componenti eseguibili (**server** e **client**). 
+I componenti comunicano sulla porta **6789** del **server**. 
 
 ### Ambiente di esecuzione 
 

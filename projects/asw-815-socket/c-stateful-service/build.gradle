@@ -24,41 +24,46 @@ subprojects {
 project(':service') {
 }
 
-project(':server') {
-    
+project(':service-impl') {
     dependencies {
         compile project(':service')
+    }
+}
+
+project(':server') {
+    dependencies {
+        compile project(':service')
+        compile project(':service-impl')
     }
 
     jar {
         manifest {
-            attributes 'Main-Class': 'asw.intro.server.Server'
-            attributes 'Class-Path': 'service.jar' 
+            attributes 'Main-Class': 'asw.socket.server.Server'
+            attributes 'Class-Path': 'service.jar service-impl.jar' 
         }
     }
 
     apply plugin: 'application' 
-    mainClassName = "asw.intro.server.Server"
+    mainClassName = "asw.socket.server.Server"
 	applicationDefaultJvmArgs = ["-Djava.util.logging.config.file=build/resources/main/logging.properties"]
       
 }
 
 project(':client') {
-
     dependencies {
         compile project(':service')
     }
 
     jar {
         manifest {
-            attributes 'Main-Class': 'asw.intro.client.Main'
+            attributes 'Main-Class': 'asw.socket.main.Main'
             attributes 'Class-Path': 'service.jar' 
         }
     }
 
     apply plugin: 'application' 
-    mainClassName = "asw.intro.client.Main"
+    mainClassName = "asw.socket.main.Main"
 	applicationDefaultJvmArgs = ["-Djava.util.logging.config.file=build/resources/main/logging.properties"]
- 
+  
 }
 
