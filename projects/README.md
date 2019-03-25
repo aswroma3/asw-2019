@@ -86,6 +86,8 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 * [asw-820-spring-framework](asw-820-spring-framework/): introduzione al framework *Spring* 
 
+* [asw-825-spring-boot](asw-825-spring-boot/): introduzione a *Spring Boot* 
+
 <!---
 * [asw-830-java-rmi](asw-830-java-rmi/): oggetti distribuiti e invocazione remota con *Java RMI* 
 
@@ -102,8 +104,6 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 <!---
 ## Progetti Spring 
-* [asw-872-spring-boot](asw-872-spring-boot/): introduzione a *Spring Boot* 
-
 * [asw-875-spring-cloud](asw-875-spring-cloud/): introduzione a *Spring Cloud* 
 -->
 
