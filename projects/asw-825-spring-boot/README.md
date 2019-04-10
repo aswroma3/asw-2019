@@ -36,15 +36,16 @@ In pratica, per compilare e assemblare ciascuna applicazione, bisogna
 ### Componenti eseguibili 
 
 Ciascuna di queste applicazioni è composta da un unico componente eseguibile. 
-Le applicazioni web possono essere accedute sulla porta **8080** dell'host (se eseguite sul proprio PC), 
-oppure sulla porta **8088** (se vengono eseguite nell'ambiente [developer](../../environments/developer/), sul nodo **dev**). 
+Le applicazioni web possono essere accedute sulla porta **8080** dell'host, 
+sia se eseguite sul proprio PC che se vengono eseguite 
+nell'ambiente [developer](../../environments/developer/), sul nodo **dev**. 
 
 ### Ambiente di esecuzione 
 
 Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,  
 oppure nell'ambiente [developer](../../environments/developer/), sul nodo **dev**. 
 In questo modo, però, le applicazioni web che espongono servizi alla porta **8080** del nodo **dev** 
-vengono pubblicate sulla porta **8088** dell'host. 
+vengono pubblicate sulla porta **8080** dell'host. 
 
 ### Esecuzione 
 
