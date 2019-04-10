@@ -1,0 +1,81 @@
+buildscript {
+	ext {
+		grpcVersion = '1.18.0'
+		protobufVersion = '3.6.1'
+		protobufPluginVersion = '0.8.8'
+	}
+	repositories {
+//		mavenCentral()
+		maven {
+//			url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "com.google.protobuf:protobuf-gradle-plugin:${protobufPluginVersion}"
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'com.google.protobuf'
+
+repositories {
+	mavenCentral()
+	maven {
+		url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+		// url "https://plugins.gradle.org/m2/"
+	}
+}
+
+group = 'asw.grpc'
+sourceCompatibility = '1.8'
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                // To generate deprecated interfaces and static bindService method,
+                // turn the enable_deprecated option to true below:
+                option 'enable_deprecated=false'
+            }
+        }
+    }
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+        }
+    }
+}
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/java");
+        sourceDirs += file("${projectDir}/build/generated/source/proto/main/grpc");
+    }
+}
+
+dependencies {
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
+}
+
+jar {
+    enabled = true
+}

@@ -1,0 +1,22 @@
+buildscript {
+	ext {
+		grpcVersion = '1.18.0'
+		protobufVersion = '3.6.1'
+		protobufPluginVersion = '0.8.8'
+	}
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+	implementation project(":hello-service-api")
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+	implementation "io.grpc:grpc-stub:${grpcVersion}"
+	implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
+	
+}

@@ -88,9 +88,9 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 * [asw-825-spring-boot](asw-825-spring-boot/): introduzione a *Spring Boot* 
 
-<!---
 * [asw-830-grpc](asw-830-grpc/): invocazione remota con *gRPC* 
 
+<!---
 * [asw-830-java-rmi](asw-830-java-rmi/): oggetti distribuiti e invocazione remota con *Java RMI* 
 
 * [asw-840-jms](asw-840-jms/): comunicazione asincrona con *Java Message Service* (*JMS*) 
