@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #
     config.vm.define "dev" do |node|
         node.vm.hostname = "dev"    
-        node.vm.network "private_network", ip: "10.11.1.101", virtualbox__intnet: true
+        node.vm.network "private_network", ip: "10.11.1.111", virtualbox__intnet: true
 
         node.vm.provider "virtualbox" do |v| 
             # queste risorse bastano nella maggior parte dei casi
