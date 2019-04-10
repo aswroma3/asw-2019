@@ -22,7 +22,7 @@ Configurazione di rete
 
 * Indirizzo IP: 10.11.1.101 
 
-* Porte pubblicate sull'host: 8080 -> 8088 
+* Porte pubblicate sull'host: 8080 -> 8080 
 
 Hardware (virtuale) 
 

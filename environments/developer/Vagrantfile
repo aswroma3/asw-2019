@@ -43,8 +43,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         node.vm.network "forwarded_port", guest: 22, host: 2222, id: 'ssh', auto_correct: true 
         node.ssh.forward_agent = true
  
-        # in alcuni casi è utile la pubblicazione della porta 8080 di dev (su 8088)
-        node.vm.network "forwarded_port", guest: 8080, host: 8088, id: 'http', auto_correct: true
+        # pubblicazione di alcune porte di dev sull'host  
+        node.vm.network "forwarded_port", guest: 8080, host: 8080, id: 'http', auto_correct: true
+        node.vm.network "forwarded_port", guest: 9092, host: 9092, id: 'kafka', auto_correct: true
+        node.vm.network "forwarded_port", guest: 5432, host: 5432, id: 'postgres', auto_correct: true
 
         # provisioning con bash 
         node.vm.provision :shell, :inline => 'apt-get update'
