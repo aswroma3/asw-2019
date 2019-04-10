@@ -5,7 +5,7 @@ che esemplificano l'invocazione remota con [gRPC](https://grpc.io/):
 
 * **a-hello** è un esempio minimale di applicazione client-server basata su GRPC  
 
-* **b-restaurant** è l'applicazione per la gestione di ristoranti (già definita in un precedente progetto),  
+* **b-restaurant** è l'applicazione per la gestione di ristoranti (già definita in un precedente progetto),
   che ora espone i suoi servizi mediante gRPC e con un client gRPC 
 
 * **c-restaurant-with-menu** estende l'applicazione precedente con la gestione dei menu dei ristoranti 
@@ -31,7 +31,7 @@ Queste applicazioni sono tutte composte da due componenti eseguibili
 
 ### Ambiente di esecuzione 
 
-Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,  
+Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC, 
 oppure nell'ambiente [developer](../../environments/developer/), sul nodo **dev**. 
 Vanno però utilizzate due finestre (terminali) diverse: 
 una per il **server** ed una per il **client**. 

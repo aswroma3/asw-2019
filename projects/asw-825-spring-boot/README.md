@@ -42,7 +42,7 @@ nell'ambiente [developer](../../environments/developer/), sul nodo **dev**.
 
 ### Ambiente di esecuzione 
 
-Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,  
+Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,
 oppure nell'ambiente [developer](../../environments/developer/), sul nodo **dev**. 
 In questo modo, però, le applicazioni web che espongono servizi alla porta **8080** del nodo **dev** 
 vengono pubblicate sulla porta **8080** dell'host. 

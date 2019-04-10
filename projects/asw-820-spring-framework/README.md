@@ -30,7 +30,7 @@ Ciascuna di queste applicazioni è composta da un unico componente eseguibile.
 
 ### Ambiente di esecuzione 
 
-Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,  
+Ciascuna di queste applicazioni può essere eseguita direttamente sul proprio PC,
 oppure nell'ambiente [developer](../../environments/developer/), sul nodo **dev**. 
 
 ### Esecuzione 
