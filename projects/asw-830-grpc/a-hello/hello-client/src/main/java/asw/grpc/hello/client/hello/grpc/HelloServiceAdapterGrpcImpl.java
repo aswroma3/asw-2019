@@ -57,10 +57,10 @@ public class HelloServiceAdapterGrpcImpl implements HelloServiceAdapter {
 	/* Invoca sayHello usando il future stub. */ 
     public String futureSayHello(String name) {
         logger.info("sayHello(" + name + ") [FUTURE STUB]");
+		String greeting = null; 
         HelloRequest request = HelloRequest.newBuilder()
                 .setName(name)
                 .build();
-		String greeting = null; 
         try {
             ListenableFuture<HelloReply> futureReply = futureStub.sayHello(request);
 			logger.info("sayHello(" + name + ") [FUTURE STUB]: qui potrei fare qualcos'altro, dopo la richiesta e prima della risposta");
@@ -80,10 +80,10 @@ public class HelloServiceAdapterGrpcImpl implements HelloServiceAdapter {
 	/* Invoca sayHello usando il blocking stub. */ 
     public String blockingSayHello(String name) {
         logger.info("sayHello(" + name + ") [BLOCKING STUB]");
+		String greeting = null; 
         HelloRequest request = HelloRequest.newBuilder()
                 .setName(name)
                 .build();
-		String greeting = null; 
         try {
             HelloReply reply = blockingStub.sayHello(request);
 			greeting = reply.getGreeting(); 
