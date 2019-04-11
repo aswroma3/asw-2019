@@ -57,16 +57,17 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
 
     public Long createRestaurant(String name, String location) {
         logger.info("Creating restaurant " + name);
+		Long restaurantId = null; 
         CreateRestaurantRequest request = CreateRestaurantRequest.newBuilder()
                 .setName(name)
                 .setLocation(location)
                 .build();
-        CreateRestaurantReply reply = null;
         try {
             ListenableFuture<CreateRestaurantReply> futureReply = futureStub.createRestaurant(request);
-            reply = futureReply.get();
+            CreateRestaurantReply reply = futureReply.get();
             if (reply != null) {
-                logger.info("Restaurant created with: " + reply.getRestaurantId());
+				restaurantId = reply.getRestaurantId(); 
+                logger.info("Restaurant created with: " + restaurantId);
             } else {
                 logger.info("Restaurant not created");
             }
@@ -77,7 +78,7 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
         } catch (ExecutionException e) {
             logger.info("ExecutionException: " + e.toString());
         }
-        return reply.getRestaurantId();
+        return restaurantId;
     }
 
     public Long createRestaurantMenu(Long restaurantId, List<MenuItem> menuItems) {
@@ -94,13 +95,13 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
                 .setRestaurantId(restaurantId)
                 .addAllMenuItems(restaurantMenuItems)
                 .build();
-        CreateRestaurantMenuReply reply = null;
         try {
             ListenableFuture<CreateRestaurantMenuReply> futureReply = futureStub.createRestaurantMenu(request);
-            reply = futureReply.get();
+            CreateRestaurantMenuReply reply = futureReply.get();
             if (reply != null) {
-                logger.info("Restaurant menu created for: " + reply.getRestaurantId());
+                logger.info("Restaurant menu created for: " + restaurantId);
             } else {
+				restaurantId = null; 
                 logger.info("Restaurant menu not created");
             }
         } catch (StatusRuntimeException e) {
@@ -110,17 +111,16 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
         } catch (ExecutionException e) {
             logger.info("ExecutionException: " + e.toString());
         }
-        return reply.getRestaurantId();
+        return restaurantId;
     }
 
     public Restaurant getRestaurant(Long restaurantId) {
         logger.info("Looking for restaurant with " + restaurantId);
-        GetRestaurantRequest request = GetRestaurantRequest.newBuilder().setRestaurantId(restaurantId).build();
-        GetRestaurantReply reply = null;
 		Restaurant restaurant = null; 
+        GetRestaurantRequest request = GetRestaurantRequest.newBuilder().setRestaurantId(restaurantId).build();
         try {
             ListenableFuture<GetRestaurantReply> futureReply = futureStub.getRestaurant(request);
-            reply = futureReply.get();
+            GetRestaurantReply reply = futureReply.get();
             if (reply != null) {
 				restaurant = new Restaurant(reply.getRestaurantId(), reply.getName(), reply.getLocation()); 
                 logger.info("Restaurant found: " + restaurant.toString());
@@ -139,12 +139,11 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
 
     public List<Restaurant> getAllRestaurants() {
         logger.info("Looking for all restaurants");
-        GetAllRestaurantsRequest request = GetAllRestaurantsRequest.newBuilder().build();
-        GetAllRestaurantsReply reply = null;
 		List<Restaurant> restaurants = null; 
+        GetAllRestaurantsRequest request = GetAllRestaurantsRequest.newBuilder().build();
         try {
             ListenableFuture<GetAllRestaurantsReply> futureReply = futureStub.getAllRestaurants(request);
-            reply = futureReply.get();
+            GetAllRestaurantsReply reply = futureReply.get();
             if (reply != null) {
 				restaurants = reply.getRestaurantsList().stream()
 					.map( restaurant -> new Restaurant(restaurant.getRestaurantId(), restaurant.getName(), restaurant.getLocation()) )
@@ -165,12 +164,11 @@ public class RestaurantServiceAdapterGrpcImpl implements RestaurantServiceAdapte
 
     public List<MenuItem> getRestaurantMenu(Long restaurantId) {
         logger.info("Looking for menu of restaurant with " + restaurantId);
-        GetRestaurantMenuRequest request = GetRestaurantMenuRequest.newBuilder().setRestaurantId(restaurantId).build();
-        GetRestaurantMenuReply reply = null;
 		List<MenuItem> menuItems = null; 
+        GetRestaurantMenuRequest request = GetRestaurantMenuRequest.newBuilder().setRestaurantId(restaurantId).build();
         try {
             ListenableFuture<GetRestaurantMenuReply> futureReply = futureStub.getRestaurantMenu(request);
-            reply = futureReply.get();
+            GetRestaurantMenuReply reply = futureReply.get();
             if (reply != null) {
 				menuItems = reply.getMenuItemsList().stream()
 					.map( item -> new MenuItem(item.getId(), item.getName(), item.getPrice()) )
