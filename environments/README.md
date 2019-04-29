@@ -11,6 +11,17 @@ Questi ambienti di esecuzione possono essere utilizzati per
 eseguire i progetti delle applicazioni distribuite 
 definiti nella cartella [projects/](../projects/) del repository. 
 
+## IMPORTANTE 
+
+Mi sono accorto che la parte dello script **setup-java.sh** 
+che si occupa del download di JDK non è più funzionante 
+(poiché ora è necessario inserire le proprie credenziali Oracle per effettuare il donwload di JDK). 
+Tuttavia, la parte dello script che effettua l'installazione è ancora funzionante. 
+
+Pertanto, è necessario effettuare **manualmente** il download del file **jdk-8u211-linux-x64.tar.gz** 
+dal sito [JDK della Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
+e poi copiare **manualmente** tale file nella cartella **asw/shared/downloads/**
+
 ## Preparazione 
 
 Per usare delle versioni più recenti del software di sviluppo (come *JDK* e *Gradle*) 

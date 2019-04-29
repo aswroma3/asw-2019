@@ -3,15 +3,15 @@
 source "/home/asw/shared/scripts/common.sh"
 
 # set up Gradle constants 
-# https://services.gradle.org/distributions/gradle-5.1.1-bin.zip
+# https://services.gradle.org/distributions/gradle-5.4.1-bin.zip
 
-GRADLE_VERSION=5.2.1
+GRADLE_VERSION=5.4.1
 
 GRADLE_ARCHIVE=gradle-${GRADLE_VERSION}-bin.zip
-# e.g., gradle-5.2.1-bin.zip
+# e.g., gradle-5.4.1-bin.zip
 GET_GRADLE_URL=https://services.gradle.org/distributions
 GRADLE_PATH=/usr/local/gradle-${GRADLE_VERSION} 
-# e.g. /usr/local/gradle-5.2.1
+# e.g. /usr/local/gradle-5.4.1
 
 function installLocalGradle {
 	echo "================="

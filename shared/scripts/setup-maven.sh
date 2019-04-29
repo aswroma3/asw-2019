@@ -3,16 +3,16 @@
 source "/home/asw/shared/scripts/common.sh"
 
 # set up Maven constants 
-MAVEN_VERSION=3.6.0
+MAVEN_VERSION=3.6.1
 
 MAVEN_ARCHIVE=apache-maven-${MAVEN_VERSION}-bin.zip
-# e.g., apache-maven-3.5.3-bin.zip
+# e.g., apache-maven-3.6.1-bin.zip
 # APACHE_MIRROR=http://apache.panu.it
 # APACHE_MIRROR=http://it.apache.contactlab.it
 APACHE_MIRROR=http://archive.apache.org
 GET_MAVEN_URL=${APACHE_MIRROR}/dist/maven/maven-3/${MAVEN_VERSION}/binaries 
 MAVEN_PATH=/usr/local/apache-maven-${MAVEN_VERSION} 
-# e.g. /usr/local/apache-maven-3.5.2
+# e.g. /usr/local/apache-maven-3.6.1
 
 function installLocalMaven {
 	echo "================="

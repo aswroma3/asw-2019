@@ -4,17 +4,17 @@ source "/home/asw/shared/scripts/common.sh"
 
 # set up Java constants 
 JAVA_VERSION=8
-JAVA_MINOR_VERSION=201
-JAVA_BUILD=09
-JAVA_HEX=42970487e3af4f5aa5bca3f542482c60
+JAVA_MINOR_VERSION=211
+JAVA_BUILD=12
+JAVA_HEX=478a62b7d4e34b78b671c754eaaf38ab
 
-# https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz
+# https://download.oracle.com/otn/java/jdk/8u211-b12/478a62b7d4e34b78b671c754eaaf38ab/jdk-8u211-linux-x64.tar.gz
 
 JAVA_FILE_NAME=jdk-${JAVA_VERSION}u${JAVA_MINOR_VERSION}-linux-x64
 JAVA_ARCHIVE=${JAVA_FILE_NAME}.tar.gz
-GET_JAVA_URL=http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION}u${JAVA_MINOR_VERSION}-b${JAVA_BUILD}/${JAVA_HEX}
+GET_JAVA_URL=https://download.oracle.com/otn/java/jdk/${JAVA_VERSION}u${JAVA_MINOR_VERSION}-b${JAVA_BUILD}/${JAVA_HEX}
 JAVA_JDK_PATH=/usr/local/jdk1.${JAVA_VERSION}.0_${JAVA_MINOR_VERSION} 
-# e.g., /usr/local/jdk1.8.0_181
+# e.g., /usr/local/jdk1.8.0_211
 JAVA_JRE_PATH=/usr/lib/jvm/jre 
 
 function installLocalJava {
