@@ -111,12 +111,9 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 * [asw-875-spring-cloud](asw-875-spring-cloud/): introduzione a *Spring Cloud* 
 -->
 
-<!---
 ## Progetti Vagrant 
 
 * [asw-880-strumenti-ambienti-virtuali](asw-880-strumenti-ambienti-virtuali/): gestione di ambienti virtuali con *Vagrant* e *Oracle VM VirtualBox* 
-
--->
 
 <!---
 ## Progetti Docker 

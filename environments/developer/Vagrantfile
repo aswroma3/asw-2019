@@ -11,9 +11,9 @@ ASW_SCRIPTS='/home/asw/shared/scripts/'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Configurazioni comuni.
 
-    # Ubuntu 16.04 LTS 64 bit VirtualBox (Bento)
+    # Ubuntu 18.04 LTS 64 bit VirtualBox (Bento)
     config.vm.box = "bento/ubuntu-18.04"
-    # config.vm.box_url = "https://app.vagrantup.com/bento/boxes/ubuntu-16.04"
+    # config.vm.box_url = "https://app.vagrantup.com/bento/boxes/ubuntu-18.04"
 	
     # folder per i progetti Asw (/home/asw/projects)
     config.vm.synced_folder "../../projects/", "/home/asw/projects", :mount_options => ["dmode=777", "fmode=777"]
