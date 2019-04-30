@@ -4,5 +4,5 @@
 
 echo Running as DEFAULT  
 
-java -jar build/libs/lucky-word-0.0.1-SNAPSHOT.jar
+java -jar build/libs/lucky-word.jar
 

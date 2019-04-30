@@ -4,5 +4,5 @@
 
 echo Running as ENGLISH  
 
-java -jar -Dspring.profiles.active=english build/libs/lucky-word-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=english build/libs/lucky-word.jar
 
