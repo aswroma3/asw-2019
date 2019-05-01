@@ -1,7 +1,7 @@
 # 
 # Vagrantfile per un singolo nodo (dev, developer) 
 # per la compilazione dei progetti, 
-# con Oracle Java, Gradle e Maven. 
+# con Java, Gradle e Maven. 
 # 
 
 VAGRANTFILE_API_VERSION = "2"
@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     #
     # Configurazione del nodo "dev", che prevede: 
-    # - Oracle Java SDK 8 
+    # - Java SDK 8 (Open JDK)
     # - Gradle 
     # - Apache Maven 
     #
@@ -45,12 +45,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
         # pubblicazione di alcune porte di dev sull'host  
         node.vm.network "forwarded_port", guest: 8080, host: 8080, id: 'http', auto_correct: true
-        node.vm.network "forwarded_port", guest: 9092, host: 9092, id: 'kafka', auto_correct: true
-        node.vm.network "forwarded_port", guest: 5432, host: 5432, id: 'postgres', auto_correct: true
+        # node.vm.network "forwarded_port", guest: 9092, host: 9092, id: 'kafka', auto_correct: true
+        # node.vm.network "forwarded_port", guest: 5432, host: 5432, id: 'postgres', auto_correct: true
 
         # provisioning con bash 
         node.vm.provision :shell, :inline => 'apt-get update'
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-java.sh"
+        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-open-jdk.sh"
+        # node.vm.provision :shell, path: ASW_SCRIPTS + "setup-oracle-jdk.sh"
         node.vm.provision :shell, path: ASW_SCRIPTS + "setup-gradle.sh"
         node.vm.provision :shell, path: ASW_SCRIPTS + "setup-maven.sh"
 

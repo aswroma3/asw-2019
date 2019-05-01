@@ -11,23 +11,30 @@ Questi ambienti di esecuzione possono essere utilizzati per
 eseguire i progetti delle applicazioni distribuite 
 definiti nella cartella [projects/](../projects/) del repository. 
 
-## IMPORTANTE 
-
-Mi sono accorto che la parte dello script **setup-java.sh** 
-che si occupa del download di JDK non è più funzionante 
-(poiché ora è necessario inserire le proprie credenziali Oracle per effettuare il donwload di JDK). 
-Tuttavia, la parte dello script che effettua l'installazione è ancora funzionante. 
-
-Pertanto, è necessario effettuare **manualmente** il download del file **jdk-8u211-linux-x64.tar.gz** 
-dal sito [JDK della Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
-e poi copiare **manualmente** tale file nella cartella **asw/shared/downloads/**
-
 ## Preparazione 
 
 Per usare delle versioni più recenti del software di sviluppo (come *JDK* e *Gradle*) 
-è necessario modificare le prime righe dei relativi script di installazione 
-(ad esempio, **asw/shared/scripts/setup-java.sh** per *JDK*), 
+potrebbe essere necessario modificare le prime righe dei relativi script di installazione 
+(ad esempio, **asw/shared/scripts/setup-gradle.sh** per *Gradle*), 
 indicando il numero della versione da utilizzare. 
+
+### Utilizzo di Oracle Java 
+
+Recentemente è cambiata la politica di download per Oracle JDK, 
+che richiede la registrazione al sito e l'uso di credenziali, 
+rendendo problematica l'automatizzazione di questa attività.
+Pertanto è stato deciso di utilizzare *Open JDK* al posto di *Oracle JDK*. 
+
+Chi volesse comunque utilizzare *Oracle JDK* 
+può procedere come segue: 
+
+* Prima, deve effettuare **manualmente** il download del file **jdk-8u211-linux-x64.tar.gz** 
+  dal sito [JDK della Oracle](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 
+  e copiare **manualmente** tale file nella cartella **asw/shared/downloads/**
+
+* Poi, deve cambiare il *Vagrantfile* dell'ambiente di interesse per utilizzare 
+  lo script **setup-oracle-jdk.sh** anziché lo script **setup-open-jdk.sh**
+
 
 ## Utilizzo degli ambienti di esecuzione 
 

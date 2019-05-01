@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# NON FUNZIONA PIU' IL DOWNLOAD DAL SITO ORACLE. 
+# PER UTILIZZARE QUESTO SCRIPT, E' PRIMA NECESSARIO SCARICARE MANUALMENTE LA VERSIONE DI ORACLE JDK SPECIFICATA QUI SOTTO.
+
 source "/home/asw/shared/scripts/common.sh"
 
 # set up Java constants 
@@ -29,7 +32,8 @@ function installRemoteJava {
 	echo "======================"
 	echo "downloading oracle jdk"
 	echo "======================"
-	wget -nv -P ${ASW_DOWNLOADS} --header "Cookie: oraclelicense=accept-securebackup-cookie;" "${GET_JAVA_URL}/${JAVA_ARCHIVE}" 
+	wget -nv -P ${ASW_DOWNLOADS} --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie;" "${GET_JAVA_URL}/${JAVA_ARCHIVE}" 
+#	wget -nv -P ${ASW_DOWNLOADS} --header "Cookie: oraclelicense=accept-securebackup-cookie;" "${GET_JAVA_URL}/${JAVA_ARCHIVE}" 
 	installLocalJava 
 }
 
