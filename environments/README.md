@@ -67,9 +67,17 @@ E' anche possibile:
 
 * [developer](developer/):
   per la compilazione e l'assemblaggio (build) dei progetti definiti nella cartella [projects/](../projects/) del repository, 
-  nonché per l'esecuzione di applicazioni Java non distribuite; 
+  nonché per l'esecuzione di applicazioni Java; 
   i progetti (in questo e, anche negli altri ambienti) potranno essere trovati 
   nella cartella **/home/asw/projects/** oppure nella cartella **projects/** dell'utente di default 
+
+* [workstation](workstation/):
+  un ambiente alternativo a [developer](developer/) per la compilazione e l'assemblaggio (build) dei progetti 
+  e per la loro esecuzione; 
+  rispetto a [developer](developer/) ha una configurazione più potente in termini di memoria e processore 
+  (dunque richiede maggiori risorse nel computer host), 
+  per consentire anche l'esecuzione concorrente di molteplici applicazioni; 
+  inoltre, ha anche *Docker* oltre al software di sviluppo per *Java*
 
 <!---
 * [client-server](client-server/): 
