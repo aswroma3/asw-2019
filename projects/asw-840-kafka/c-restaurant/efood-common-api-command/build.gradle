@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		lombokVersion = '1.18.4'
+	}
+	repositories {
+//		mavenCentral()
+		maven {
+//			url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "io.franzbecker:gradle-lombok:2.0"
+	}
+}
+
+apply plugin: 'java'
+//apply plugin: 'io.spring.dependency-management'
+apply plugin: 'io.franzbecker.gradle-lombok'
+
+repositories {
+	mavenCentral()
+	maven {
+//		url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+		url "https://plugins.gradle.org/m2/"
+	}
+}
+
+group = 'asw.efood'
+sourceCompatibility = '1.8'
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}
+
+jar {
+    enabled = true
+}
+//bootJar {
+//    enabled = false
+//}
+

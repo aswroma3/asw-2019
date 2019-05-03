@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+group = 'asw.efood'
+sourceCompatibility = '1.8'
+
+dependencies {
+	implementation project(":efood-common-api-command")
+}
+
+jar {
+    enabled = true
+}
+

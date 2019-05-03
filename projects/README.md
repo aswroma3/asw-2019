@@ -92,6 +92,8 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 * [asw-835-rest](asw-835-rest/): invocazione remota con *REST* 
 
+* [asw-840-kafka](asw-840-kafka/): comunicazione asincrona con *Kafka*
+
 <!---
 * [asw-830-java-rmi](asw-830-java-rmi/): oggetti distribuiti e invocazione remota con *Java RMI* 
 
