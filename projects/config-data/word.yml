@@ -1,0 +1,23 @@
+# word.yml
+--- 
+words: test,test,test,test
+
+--- 
+spring: 
+  profiles: subject
+
+words: Spring Cloud,Spring Cloud
+  
+--- 
+spring: 
+  profiles: verb
+
+words: Config,Config
+  
+--- 
+spring: 
+  profiles: object
+
+words: works,works
+
+
