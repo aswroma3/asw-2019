@@ -94,6 +94,8 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 * [asw-840-kafka](asw-840-kafka/): comunicazione asincrona con *Kafka*
 
+* [asw-860-spring-cloud](asw-860-spring-cloud/): introduzione a *Spring Cloud* 
+
 <!---
 * [asw-830-java-rmi](asw-830-java-rmi/): oggetti distribuiti e invocazione remota con *Java RMI* 
 
@@ -110,7 +112,6 @@ Nei casi più semplici, è possibile eseguire un'applicazione come segue:
 
 <!---
 ## Progetti Spring 
-* [asw-875-spring-cloud](asw-875-spring-cloud/): introduzione a *Spring Cloud* 
 -->
 
 ## Progetti Vagrant 

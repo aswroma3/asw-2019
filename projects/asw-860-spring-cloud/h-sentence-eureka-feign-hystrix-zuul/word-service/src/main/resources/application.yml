@@ -1,0 +1,41 @@
+# application.yml
+--- 
+spring: 
+  application: 
+    name: test
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://eureka:8761/eureka/
+# leave eureka.instance.leaseRenewalIntervalInSeconds unchanged in production
+# just here to provide quicker updates to Eureka for demos
+  instance: 
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap: 
+      instanceId: ${spring.application.name}:${random.value}
+server: 
+  port: ${PORT:${SERVER_PORT:0}}
+#  port: 8080
+words: to,pass,the,test
+
+--- 
+spring: 
+  profiles: subject
+  application: 
+    name: subject
+words: He,She,Ann,Mary,John,Paul,My dog,My cat
+  
+--- 
+spring: 
+  profiles: verb
+  application: 
+    name: verb
+words: likes,loves,hates,dreams,does not like,does not love
+  
+--- 
+spring: 
+  profiles: object
+  application: 
+    name: object
+words: beans,cats,dogs,pasta,pizza,pizza margherita,spring,my dog,my cat

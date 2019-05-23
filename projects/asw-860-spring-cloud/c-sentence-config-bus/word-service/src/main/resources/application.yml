@@ -1,0 +1,52 @@
+# application.yml
+--- 
+spring: 
+  application: 
+    name: word
+# in effetti non serve se eseguo RabbitMQ localmente
+  rabbitmq: 
+    host: localhost
+    port: 5672
+
+# parole di default (per tutti i profili)
+words: default,default,default
+
+# abilita il refresh ed anche il bus-refresh, esponendo gli endpoint selezionati 
+# https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html 
+management.endpoints.web.exposure.include: info,health,refresh,bus-refresh
+
+--- 
+spring: 
+  profiles: subject
+#  application: 
+#    name: subject
+
+server: 
+  port: 8081
+
+# parole di default (se il config server non e' accessibile)
+#words: He,She,Ann,Mary,John,Paul,My dog,My cat
+  
+--- 
+spring: 
+  profiles: verb
+#  application: 
+#    name: verb
+
+server: 
+  port: 8082
+
+# parole di default (se il config server non e' accessibile)
+#words: likes,loves,hates,dreams,does not like,does not love
+  
+--- 
+spring: 
+  profiles: object
+#  application: 
+#    name: object
+
+server: 
+  port: 8083
+
+# parole di default (se il config server non e' accessibile)
+#words: beans,cats,dogs,pasta,pizza,pizza margherita,spring,my dog,my cat

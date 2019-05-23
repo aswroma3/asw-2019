@@ -1,0 +1,11 @@
+include 'sentence-service'
+include 'word-service'
+include 'eureka-server'
+// include 'zuul-gateway'
+
+rootProject.name = 'asw-sentence'
+
+project(':sentence-service').name = 'sentence'
+project(':word-service').name = 'word'
+project(':eureka-server').name = 'eureka'
+// project(':zuul-gateway').name = 'zuul'

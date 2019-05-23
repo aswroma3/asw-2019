@@ -1,0 +1,32 @@
+# word.yml
+--- 
+words: default,default
+
+--- 
+spring: 
+  profiles: subject
+
+#server: 
+#  port: 8081
+
+words: Spring Cloud Config,Spring Cloud Config
+  
+--- 
+spring: 
+  profiles: verb
+
+#server: 
+#  port: 8082
+
+words: works,works
+  
+--- 
+spring: 
+  profiles: object
+
+#server: 
+#  port: 8083
+
+words: from local files,from local files
+
+

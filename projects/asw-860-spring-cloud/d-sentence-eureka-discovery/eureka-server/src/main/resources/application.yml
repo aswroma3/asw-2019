@@ -1,0 +1,12 @@
+# application.yml 
+---
+server:
+  port: 8761
+
+eureka:
+  server:
+# leave enableSelfPreservation and evictionIntervalTimerInMs
+# unchanged in production
+# just here to provide quicker updates to Eureka for demos
+#    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 10000
