@@ -56,24 +56,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
         # installa Java, Gradle e Maven 
         # node.vm.provision :shell, :inline => 'apt update'
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-open-jdk.sh"
-        # node.vm.provision :shell, path: ASW_SCRIPTS + "setup-oracle-jdk.sh"
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-gradle.sh"
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-maven.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-open-jdk.sh"
+        # node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-oracle-jdk.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-gradle.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-maven.sh"
 
 		# installa docker e docker compose 
-        node.vm.provision :shell, path: ASW_SCRIPTS + "prepare-docker-configuration.sh"
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-docker.sh"
-        node.vm.provision :shell, path: ASW_SCRIPTS + "setup-docker-compose.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "prepare-docker-configuration.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-docker.sh"
+        node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-docker-compose.sh"
 		
 		# si configura come client per il registry presso swarm.inf.uniroma3.it:5000 
-        ## TODO node.vm.provision :shell, path: ASW_SCRIPTS + "setup-swarm-client.sh"
+        ## TODO node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-swarm-client.sh"
 
-		node.vm.provision :shell, path: ASW_SCRIPTS + "setup-workstation-hosts.sh"
+		node.vm.provision :shell, :inline => ASW_SCRIPTS + "setup-workstation-hosts.sh"
 
 		# crea lo swarm e avvia anche il registry per lo swarm
-		# node.vm.provision :shell, path: ASW_SCRIPTS + "start-mini-swarm.sh"
-		# node.vm.provision :shell, path: ASW_SCRIPTS + "start-swarm-registry.sh"
+		# node.vm.provision :shell, :inline => ASW_SCRIPTS + "start-mini-swarm.sh"
+		# node.vm.provision :shell, :inline => ASW_SCRIPTS + "start-swarm-registry.sh"
 
 		# crea un link simbolico alla cartella dei progetti asw nella cartella dell'utente di default 
         node.vm.provision :shell, :inline => 'ln -s /home/asw/projects projects'
