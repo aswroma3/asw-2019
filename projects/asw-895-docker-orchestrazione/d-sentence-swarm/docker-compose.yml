@@ -1,0 +1,42 @@
+version: '3'
+services:
+  subject:
+    image: aswroma3/word-swarm
+    build: ./word-service
+    environment: 
+      - SPRING_PROFILES_ACTIVE=subject
+    deploy:
+      mode: replicated
+      replicas: 1    
+  verb:
+    image: aswroma3/word-swarm
+    build: ./word-service
+    environment: 
+      - SPRING_PROFILES_ACTIVE=verb
+    deploy:
+      mode: replicated
+      replicas: 1    
+  object:
+    image: aswroma3/word-swarm
+    build: ./word-service
+    environment: 
+      - SPRING_PROFILES_ACTIVE=object
+    deploy:
+      mode: replicated
+      replicas: 1    
+  sentence:
+    image: aswroma3/sentence-swarm
+    build: ./sentence-service
+    deploy:
+      mode: replicated
+      replicas: 2    
+  zuul:
+    image: aswroma3/sentence-zuul-swarm
+    build: ./zuul-gateway
+    ports:
+    - "8080:8080"
+
+
+
+
+

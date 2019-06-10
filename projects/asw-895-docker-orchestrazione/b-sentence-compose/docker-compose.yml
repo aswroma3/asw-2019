@@ -1,0 +1,45 @@
+version: '2'
+services:
+  eureka:
+    build: 
+      context: ./eureka-server
+    container_name: eureka 
+  subject:
+    build: 
+      context: ./word-service
+    depends_on:
+      - "eureka"
+    environment: 
+      - SPRING_PROFILES_ACTIVE=subject
+  verb:
+    build: 
+      context: ./word-service
+    depends_on:
+      - "eureka"
+    environment: 
+      - SPRING_PROFILES_ACTIVE=verb
+  object:
+    build: 
+      context: ./word-service
+    depends_on:
+      - "eureka"
+    environment: 
+      - SPRING_PROFILES_ACTIVE=object
+  sentence:
+    build: 
+      context: ./sentence-service
+    depends_on:
+      - "eureka"
+  zuul:
+    build: 
+      context: ./zuul-gateway
+    container_name: zuul 
+    ports:
+    - "8080:8080"
+    depends_on:
+      - "eureka"
+
+
+
+
+
