@@ -29,7 +29,8 @@ function setupSwarmHostsFile {
 	# ubuntu 18.04 
 	MY_IP_ADDR=$(ifconfig  | grep 'inet' | grep -v 'inet6' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $2}' | grep '10.11.1.')
 	echo "adding entries for swarm nodes to /etc/hosts on " ${MY_IP_ADDR}
-	echo ${MY_IP_ADDR} " workstation my-swarm my-registry" >> ${HOSTS_FILE}
+	# echo ${MY_IP_ADDR} " workstation my-swarm my-registry" >> ${HOSTS_FILE}
+	echo ${MY_IP_ADDR} " workstation" >> ${HOSTS_FILE}
 }
 
 echo "setup /etc/hosts on the workstation node"
