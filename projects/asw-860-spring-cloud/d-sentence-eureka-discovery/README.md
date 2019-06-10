@@ -17,7 +17,7 @@ Questa versione dell'applicazione **sentence** è formata dai seguenti component
   * una con il profilo *subject* su una porta casuale, 
   * una con il profilo *verb* su una porta casuale, 
   * una con il profilo *object* su una porta casuale, 
-* **sentence-service** è il servizio per la generazione delle frasi casuali, sulla porta *8080*, che agisce da client nei confronti di Eureka
+* **sentence-service** è il servizio per la generazione delle frasi casuali, sulla porta *8080*, che agisce da client nei confronti dei servizi per le parole tramite Eureka 
 
 ## Esecuzione 
 
