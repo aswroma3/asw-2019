@@ -44,7 +44,7 @@ Per avviare l'applicazione sul nodo **workstation**, eseguire lo script `run-hel
 Se si vuole avviare l'applicazione in uno *swarm* diverso, è necessario prima modificare la variabile d'ambiente `DOCKER_SWARM` negli script `run-hello-service.sh`, `stop-hello-service.sh`, `run-curl-client.sh` e `run-curl-client-forever.sh`. 
 
 Complessivamente, l'applicazione *hello* espone un servizio REST sulla porta **8080** del nodo **workstation**, 
-ed è possibile ottenere un saluto all'indirizzo `workstation:8080` oppure `localhost:8080`.
+ed è possibile ottenere un saluto all'indirizzo `workstation:8080`.
 
 In pratica, l'applicazione può essere verificata usando lo script `run-curl-client.sh` oppure `run-curl-client-forever.sh` (alla fine va arrestato con **CTRL-C**). 
 

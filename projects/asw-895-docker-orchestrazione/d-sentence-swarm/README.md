@@ -52,7 +52,7 @@ Per avviare l'applicazione sul nodo **workstation**, eseguire lo script `run-sen
 Se si vuole avviare l'applicazione in uno *swarm* diverso, è necessario prima modificare la variabile d'ambiente `DOCKER_SWARM` negli script `run-sentence-stack.sh`, `stop-sentence-stack.sh` e `run-curl-client-forever.sh`. 
 
 Complessivamente, l'applicazione *sentence* espone un servizio REST sulla porta **8080** del nodo **workstation**, 
-ed è possibile ottenere una frase casuale all'indirizzo `workstation:8080/sentence` oppure `localhost:8080/sentence`.
+ed è possibile ottenere una frase casuale all'indirizzo `workstation:8080/sentence`.
 
 In pratica, l'applicazione può essere verificata usando lo script `run-curl-client-forever.sh` (alla fine va arrestato con **CTRL-C**). 
 
